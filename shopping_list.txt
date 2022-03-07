@@ -1,5 +1,5 @@
 banana x 1
-pineapple x 2
+pineapple x 4
 orange x 3
 lemon x 4
 grape x 5
