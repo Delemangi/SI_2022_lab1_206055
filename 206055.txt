@@ -1,0 +1,216 @@
+4.
+
+git clone git@github.com:Delemangi/SI_2022_lab1_206055.git
+Клонирање на GitHub repo-то преку SSH
+
+---
+5.
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git commit -m "Add 5 items to the shopping list"
+Креирање на нов commit со новиот фајл shopping_list.txt и порака "Add 5 items to the shopping list"
+
+---
+6.
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git commit -m "Add quantities to the items"
+Креирање на нов commit со изменетиот фајл shopping_list.txt и порака "Add quantities to the items"
+
+---
+7.
+
+git branch branch1
+Креирање на гранка branch1
+
+git branch branch2
+Креирање на гранка branch2
+
+---
+8.
+
+git log
+
+commit 7b30dfc8701b4c008a68a826b7efa70397d5ea4d (HEAD -> master, branch2, branch1)
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 19:47:56 2022 +0100
+
+    Add quantities to the items
+
+commit 47b116da8c83e0d32943a28dd0b6ec212705c932
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 19:36:07 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit a1eec74ca0de1f67ee4c416e62c792cdd1641aa2 (origin/master, origin/HEAD)
+Author: stefan <64418237+Delemangi@users.noreply.github.com>
+Date:   Mon Mar 7 19:30:28 2022 +0100
+
+    Initial commit
+
+---
+9.
+
+git push --all origin
+Се синхронизираат сите гранки со remote
+
+---
+10.
+
+git checkout branch1
+Префрлување на гранката branch1
+
+---
+11.
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git commit -m "Change quantity of item #5"
+Креирање на нов commit со изменетиот фајл shopping_list.txt и порака "Change quantity of item #5"
+
+---
+12.
+
+git checkout master
+Префрлување на гранката master
+
+---
+13.
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git commit -m "Change quantity of item #2"
+Креирање на нов commit со изменетиот фајл shopping_list.txt и порака "Change quantity of item #2"
+
+---
+14.
+
+git push --all origin
+Се синхронизираат сите гранки со remote
+
+---
+15.
+
+git checkout branch2
+Префрлување на гранката branch2
+
+---
+16.
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git commit -m "Modify item #4"
+Креирање на нов commit со изменетиот фајл shopping_list.txt и порака "Modify item #4"
+
+---
+17.
+
+git log
+
+commit 5ba3e168bd50a15b6df0f6edca6a134625a68e53 (HEAD -> branch2)
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 21:54:21 2022 +0100
+
+    Modify item #4
+
+commit 7b30dfc8701b4c008a68a826b7efa70397d5ea4d (origin/branch2)
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 19:47:56 2022 +0100
+
+    Add quantities to the items
+
+commit 47b116da8c83e0d32943a28dd0b6ec212705c932
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 19:36:07 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit a1eec74ca0de1f67ee4c416e62c792cdd1641aa2
+Author: stefan <64418237+Delemangi@users.noreply.github.com>
+Date:   Mon Mar 7 19:30:28 2022 +0100
+
+    Initial commit
+
+---
+18.
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git commit --amend -m "Modify item #4 and add item #6"
+Менување на последниот commit, така што ќе се додадат измените во shopping_list.txt и ќе се смени пораката
+
+---
+19.
+
+git log
+
+commit 5e345bced13386479ee307881441871b29d11dd9 (HEAD -> branch2)
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 21:54:21 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit 7b30dfc8701b4c008a68a826b7efa70397d5ea4d (origin/branch2)
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 19:47:56 2022 +0100
+
+    Add quantities to the items
+
+commit 47b116da8c83e0d32943a28dd0b6ec212705c932
+Author: Delemangi <stefan@heckgaming.com>
+Date:   Mon Mar 7 19:36:07 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit a1eec74ca0de1f67ee4c416e62c792cdd1641aa2
+Author: stefan <64418237+Delemangi@users.noreply.github.com>
+Date:   Mon Mar 7 19:30:28 2022 +0100
+
+    Initial commit
+
+---
+20.
+
+git checkout master
+Префрлување на гранката master
+
+git merge branch1
+Спојување на гранката branch1 кон master. Нема конфликти при спојувањето. Користената стратегија е recursive
+
+---
+21.
+
+git merge branch2
+Спојување на гранката branch2 кон master. Има конфликти при спојувањето
+
+git checkout --theirs shopping_list.txt
+За решавање на конфликтот, се прифаќаат измените од branch2. Користената стратегија е recursive theirs
+
+git add shopping_list.txt
+Додавање на фајлот shopping_list.txt во состојба staged
+
+git merge --continue
+
+---
+22.
+
+git add 206055.txt
+Додавање на фајлот 206055.txt во состојба staged
+
+git commit -m "Add docs"
+Креирање на нов commit со новиот фајл 206055.txt и порака "Add docs"
+
+---
+23.
+
+git push --all origin
+Се синхронизираат сите гранки со remote
