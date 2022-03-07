@@ -1,5 +1,6 @@
 banana x 1
-pineapple x 4
+pineapple x 2
 orange x 3
-lemon x 4
-grape x 10
+almond x 4
+grape x 5
+cauliflower x 1
