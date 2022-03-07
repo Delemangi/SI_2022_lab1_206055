@@ -2,4 +2,4 @@ banana x 1
 pineapple x 2
 orange x 3
 lemon x 4
-grape x 5
+grape x 10
